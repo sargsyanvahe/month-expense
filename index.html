@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Month Expense</title>
+    <style>
+        #money {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="money"></h1>
+    <script>
+        const today = new Date();
+        const todayDay = today.getDate();
+        const lastDayOfMonth = new Date(
+            today.getFullYear(),
+            today.getMonth() + 1,
+            0
+        ).getDate();
+
+        const money = +prompt('Input money:');
+
+        if (isNaN(money)){
+            const element = document.getElementById('money');
+            element.innerText = Math.floor(money / (lastDayOfMonth - (todayDay - 1)))
+        }
+            
+    </script>
+</body>
+
+</html>
