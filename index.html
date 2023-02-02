@@ -28,7 +28,7 @@
 
         const money = +prompt('Input money:');
 
-        if (isNaN(money)){
+        if (!isNaN(money)){
             const element = document.getElementById('money');
             element.innerText = Math.floor(money / (lastDayOfMonth - (todayDay - 1)))
         }
